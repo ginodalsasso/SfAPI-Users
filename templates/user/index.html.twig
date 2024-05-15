@@ -11,8 +11,8 @@
             <div class="top">
                 <div>
                     <h2> {{user.name.title}} {{user.name.last}} {{user.name.first}} </h2>
-                    <p class="txt-light"> {{user.email}} </p>
-                    <p class="txt-light"> {{user.phone}} </p>
+                    <p class="txt-light"> <i class="ri-mail-line"></i>&nbsp;{{user.email}} </p>
+                    <p class="txt-light"> <i class="ri-smartphone-line"></i>&nbsp;{{user.phone}} </p>
                 </div>
                 <div>
                     <img src="{{user.picture.large}}" alt="">
@@ -20,12 +20,12 @@
             </div>
             <div class="details">
                 <div>
-                    {{user.location.street.number}} {{user.location.street.name}} <br>
+                    <i class="ri-map-pin-2-line"></i>&nbsp;{{user.location.street.number}} {{user.location.street.name}} <br>
                     <p> {{user.location.postcode}} {{user.location.city}} </p>
                     <p> {{user.location.country}} </p>
                 </div>
                 <div>
-                    <p class="plus"><a href=""></a></p>
+                    <p class="plus"><a href=""><i class="ri-folder-add-line"></i></a></p>
                 </div>
             </div>
         </div>
