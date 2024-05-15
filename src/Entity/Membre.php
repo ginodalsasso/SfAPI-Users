@@ -2,24 +2,39 @@
 
 namespace App\Entity;
 
-use App\Repository\MembreRepository;
+use ApiPlatform\Metadata\Get;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MembreRepository;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: MembreRepository::class)]
+#[ApiResource(
+    operations:[
+        new Get(normalizationContext: ['groups' => 'membre:item']),
+        new GetCollection(normalizationContext: ['groups' => 'membre:list'])
+    ]
+)]
+
 class Membre
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['membre:list', 'membre:item'])]  
     private ?int $id = null;
 
     #[ORM\Column(length: 20)]
+    #[Groups(['membre:list', 'membre:item'])]  
     private ?string $title = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups(['membre:list', 'membre:item'])]  
     private ?string $last = null;
 
     #[ORM\Column(length: 50)]
+    #[Groups(['membre:list', 'membre:item'])]  
     private ?string $first = null;
 
     #[ORM\Column(length: 255)]

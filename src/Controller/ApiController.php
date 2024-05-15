@@ -40,6 +40,7 @@ class ApiController extends AbstractController
         $country = filter_input(INPUT_POST, 'country', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         if($title && $last && $first && $email && $phone && $picture && $streetnumber && $streetname && $postcode && $city && $country){
+            
             $membre->setTitle($title);
             $membre->setLast($last);
             $membre->setFirst($first);
